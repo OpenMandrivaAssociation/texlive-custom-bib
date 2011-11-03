@@ -1,3 +1,9 @@
+# revision 21868
+# category Package
+# catalog-ctan /macros/latex/contrib/custom-bib
+# catalog-date 2011-03-28 19:03:53 +0200
+# catalog-license lppl
+# catalog-version 4.32
 Name:		texlive-custom-bib
 Version:	4.32
 Release:	1
@@ -70,6 +76,7 @@ citations.
 %doc %{_texmfdistdir}/source/latex/custom-bib/makebst.dtx
 %doc %{_texmfdistdir}/source/latex/custom-bib/makebst.ins
 %doc %{_texmfdistdir}/source/latex/custom-bib/shorthnd.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -80,3 +87,5 @@ citations.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
