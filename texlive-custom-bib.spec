@@ -1,11 +1,11 @@
-# revision 21868
+# revision 24729
 # category Package
 # catalog-ctan /macros/latex/contrib/custom-bib
-# catalog-date 2011-03-28 19:03:53 +0200
+# catalog-date 2011-11-18 13:01:42 +0100
 # catalog-license lppl
-# catalog-version 4.32
+# catalog-version 4.33
 Name:		texlive-custom-bib
-Version:	4.32
+Version:	4.33
 Release:	1
 Summary:	Customised BibTeX styles
 Group:		Publishing
@@ -18,9 +18,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
-Conflicts:	texlive-source <= 20110705-3
 
 %description
 Package generating customized BibTeX bibliography styles from a
@@ -29,19 +26,19 @@ menu application. Includes support for the Harvard style of
 citations.
 
 %pre
-    %_texmf_mktexlsr_pre
+    %{_sbindir}/texlive.post
 
 %post
-    %_texmf_mktexlsr_post
+    %{_sbindir}/texlive.post
 
 %preun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
+	%{_sbindir}/texlive.post
     fi
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -69,9 +66,10 @@ citations.
 %{_texmfdistdir}/tex/latex/custom-bib/spanish.mbs
 %{_texmfdistdir}/tex/latex/custom-bib/suppjour.mbs
 %{_texmfdistdir}/tex/latex/custom-bib/svenska.mbs
-%doc %{_texmfdistdir}/doc/latex/custom-bib/README.V432
+%doc %{_texmfdistdir}/doc/latex/custom-bib/README
 %doc %{_texmfdistdir}/doc/latex/custom-bib/makebst.pdf
 %doc %{_texmfdistdir}/doc/latex/custom-bib/merlin.pdf
+%doc %{_texmfdistdir}/doc/latex/custom-bib/readme.mkb
 #- source
 %doc %{_texmfdistdir}/source/latex/custom-bib/makebst.drv
 %doc %{_texmfdistdir}/source/latex/custom-bib/makebst.dtx
