@@ -77,3 +77,21 @@ citations.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 4.33-2
++ Revision: 750754
+- Rebuild to reduce used resources
+
+* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.33-1
++ Revision: 739740
+- texlive-custom-bib
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.32-1
++ Revision: 718191
+- texlive-custom-bib
+- texlive-custom-bib
+- texlive-custom-bib
+- texlive-custom-bib
+
