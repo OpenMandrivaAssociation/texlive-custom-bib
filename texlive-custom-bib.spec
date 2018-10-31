@@ -6,7 +6,7 @@
 # catalog-version 4.33
 Name:		texlive-custom-bib
 Version:	4.33
-Release:	10
+Release:	11
 Summary:	Customised BibTeX styles
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib
