@@ -1,19 +1,13 @@
-# revision 24729
-# category Package
-# catalog-ctan /macros/latex/contrib/custom-bib
-# catalog-date 2011-11-18 13:01:42 +0100
-# catalog-license lppl
-# catalog-version 4.33
 Name:		texlive-custom-bib
-Version:	4.33
-Release:	11
+Version:	24729
+Release:	1
 Summary:	Customised BibTeX styles
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib
 License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -26,12 +20,12 @@ menu application. Includes support for the Harvard style of
 citations.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -70,28 +64,11 @@ citations.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 4.33-2
-+ Revision: 750754
-- Rebuild to reduce used resources
-
-* Fri Dec 09 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.33-1
-+ Revision: 739740
-- texlive-custom-bib
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 4.32-1
-+ Revision: 718191
-- texlive-custom-bib
-- texlive-custom-bib
-- texlive-custom-bib
-- texlive-custom-bib
-
