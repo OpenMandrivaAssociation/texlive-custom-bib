@@ -3,7 +3,7 @@ Version:	24729
 Release:	2
 Summary:	Customised BibTeX styles
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/custom-bib
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/custom-bib.doc.r%{version}.tar.xz
